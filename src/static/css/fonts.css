@@ -1,0 +1,140 @@
+@font-face {
+    font-family: 'MonaSans';
+    src: url('../fonts/woff2/MonaSans-Regular.woff2') format('woff2'),
+         url('../fonts/woff/MonaSans-Regular.woff') format('woff'),
+         url('../fonts/ttf/MonaSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MonaSans';
+    src: url('../fonts/woff2/MonaSans-Medium.woff2') format('woff2'),
+         url('../fonts/woff/MonaSans-Medium.woff') format('woff'),
+         url('../fonts/ttf/MonaSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MonaSans';
+    src: url('../fonts/woff2/MonaSans-SemiBold.woff2') format('woff2'),
+         url('../fonts/woff/MonaSans-SemiBold.woff') format('woff'),
+         url('../fonts/ttf/MonaSans-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MonaSans';
+    src: url('../fonts/woff2/MonaSans-Bold.woff2') format('woff2'),
+         url('../fonts/woff/MonaSans-Bold.woff') format('woff'),
+         url('../fonts/ttf/MonaSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MonaSans';
+    src: url('../fonts/woff2/MonaSans-ExtraBold.woff2') format('woff2'),
+         url('../fonts/woff/MonaSans-ExtraBold.woff') format('woff'),
+         url('../fonts/ttf/MonaSans-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MonaSans';
+    src: url('../fonts/woff2/MonaSans-Black.woff2') format('woff2'),
+         url('../fonts/woff/MonaSans-Black.woff') format('woff'),
+         url('../fonts/ttf/MonaSans-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RozhaOne';
+    src: url('../fonts/woff2/RozhaOne.woff2') format('woff2'),
+         url('../fonts/woff/RozhaOne.woff') format('woff'),
+         url('../fonts/ttf/RozhaOne.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/* Fonts classes */
+.regular {
+    font-family: "MonaSans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.medium {
+    font-family: "MonaSans", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.semi-bold {
+    font-family: "MonaSans", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.bold {
+    font-family: "MonaSans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.extra-bold {
+    font-family: "MonaSans", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.black {
+    font-family: "MonaSans", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.rozha-one {
+    font-family: "RozhaOne";
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/* Text tags fonts */
+p {
+    font-family: "MonaSans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h3 {
+    font-family: "MonaSans", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+h2 {
+    font-family: "MonaSans", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+h1 {
+    font-family: "MonaSans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+/* Other tags fonts */
+input, input::placeholder, select, option, textarea, textarea::placeholder, li {
+    font-family: "MonaSans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}

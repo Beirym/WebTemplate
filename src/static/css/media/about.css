@@ -1,0 +1,25 @@
+@media (max-width: 500px) {
+    .about-block {
+        display: grid;
+        row-gap: 20px;
+    }
+
+    .about-block .photo {
+        margin: 0 auto;
+    }
+
+    .about-block h1 {
+        text-align: center;
+    }
+
+    .about-block p {
+        text-align: center;
+    }
+
+    .about-block .social-media {
+        display: flex;
+        column-gap: 5px;
+        margin-top: 20px;
+        justify-content: center; /* Центрирование по горизонтали */
+    }
+}

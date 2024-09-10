@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{{ metadata.title }}</title>
+
+        <link rel="icon" href="{{ url_for('static', path='/icons/logo.svg') }}" type="image/x-icon">
+        <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', path='/css/media/styles.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', path='/css/about.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', path='/css/media/about.css') }}">
+    </head>
+    <body>
+        <!--Head block -->
+        <div id="head" class="head-section">
+            <div class="content">
+                <img class="title" src="{{ url_for('static', path=metadata.images.head_main_img) }}">
+                <img class="subtitle" src="{{ url_for('static', path=metadata.images.head_sub_img) }}">
+                <a href="#content"><img class="scroll-down" src="{{ url_for('static', path='/icons/head/scroll-down.svg') }}"></a>
+            </div>
+        </div>
+
+        <div id="content">
+            <!-- Header -->
+            <header id="header" class="header">
+                <wrapper>
+                    <a href="#head"><img class="logo" src="{{ url_for('static', path=metadata.images.header_logo) }}"></a>
+                    <nav class="navbar">
+                        <ul>
+                            <li><a href="#about"><p class="rozha-one">About</p></a></li>
+                            {% if repositories %}<li><a href="#repositories"><p class="rozha-one">Repositories</p></a></li>{% endif %}
+                            {% if posts %}<li><a href="#posts"><p class="rozha-one">Posts</p></a></li>{% endif %}
+                        </ul>  
+                    </nav>
+                    <img src="{{ url_for('static', path='/icons/header/navbar-open.png') }}" alt="Menu" id="nav-icon" class="nav-icon" />
+                </wrapper>
+            </header>
+
+            <!-- Full screen navbar menu -->
+            <div id="slideout-menu">
+                <img src="{{ url_for('static', path='/icons/header/navbar-close.png') }}" alt="Close Menu" id="close-icon" class="close-icon" />
+                <nav class="slide-nav">
+                    <ul id="nav-links">
+                        <li><a href="#about"><p class="rozha-one">About</p></a></li>
+                        {% if repositories %}<li><a href="#repositories"><p class="rozha-one">Repositories</p></a></li>{% endif %}
+                        {% if posts %}<li><a href="#posts"><p class="rozha-one">Posts</p></a></li>{% endif %}
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Content --> 
+            <div id="about" class="block">
+                <div class="heading">
+                    <h1 class="rozha-one">About</h1>
+                    <hr>
+                </div>
+
+                <div class="about-block">
+                    <img class="photo" src="{{ url_for('static', path=metadata.images.about_person_avatar) }}">
+                    <div>
+                        <h1 class="black">{{ metadata.about_person_fullname }}</h1>
+                        <p>{{ metadata.about_person_description }}</p>
+                        <div class="social-media">
+                            {% for s in metadata.socials %}
+                                {% if s %}
+                                    <a href="{{ s.link }}" target="_blank">
+                                        <img src="{{ url_for('static', path='/img/about/social-media/' ~ s.title|lower ~ '.png') }}" 
+                                            alt="{{ s.title }}">
+                                    </a>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            {% if repositories %}
+                <div id="repositories" class="block">
+                    <div class="heading">
+                        <h1 class="rozha-one">Repositories</h1>
+                        <hr>
+                    </div>
+                    <div class="cards-list">
+                        {% for r in repositories %}
+                            <div class="card vertical-card">
+                                <div class="heading">
+                                    <h1>{{ r.title }}</h1>
+                                    <a href="{{ r.link }}" target="_blank">
+                                        <img src="{{ url_for('static', path='/img/about/social-media/github.png') }}">
+                                    </a>
+                                </div>
+                                <p>{{ r.description }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if posts %}
+                <div id="posts" class="block">
+                    <div class="heading">
+                        <h1 class="rozha-one">Posts</h1>
+                        <hr>
+                    </div>
+                    <div class="cards-list">
+                        {% for p in posts %}
+                            <div class="card horizontal-card">
+                                <div class="heading">
+                                    <h1>{{ p.title }}</h1>
+                                    <a href="{{ p.link }}" target="_blank">
+                                        <img src="{{ url_for('static', path='/img/about/social-media/telegram.png') }}">
+                                    </a>
+                                </div>
+                                <p>{{ p.text|safe }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+
+            <!-- Footer -->
+            <footer>
+                <wrapper>
+                    <div class="content">
+                        <h1 class="rozha-one">
+                            Nikita Silaev &#169; 
+                            <span id="current-year">Now</span>
+
+                            <script>
+                                const current_year = new Date().getFullYear();
+                                document.getElementById('current-year').innerText = current_year;
+                            </script>
+                        </h1>
+
+                        {% if metadata.integrations.contact_telegram %}
+                            <a href="https://t.me/{{ metadata.integrations.telegram }}" target="_blank">
+                                <p class="rozha-one">Get in touch with me</p>
+                                <img src="{{ url_for('static', path='/img/about/social-media/telegram.png') }}" alt="Telegram">
+                            </a>
+                        {% endif %}
+                    </div>
+                </wrapper>
+            </footer>
+        </div>
+
+        <script src="{{ url_for('static', path='/js/background-moving.js') }}"></script>
+        <script src="{{ url_for('static', path='/js/header-fixing.js') }}"></script>
+        <script src="{{ url_for('static', path='/js/navbar.js') }}"></script>
+    </body>
+</html>
